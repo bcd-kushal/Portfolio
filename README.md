@@ -20,7 +20,7 @@ This portfolio showcases a selection of my projects, skills, and experiences tai
   <tr><td>📑 Blogs</td><td>https://blogs.kushalkumarsaha.com</td></tr>
 </table> 
 
-## :dependabot: Let's Connect
+## :speech_balloon: Let's Connect
 
 I consistently seek new opportunities to collaborate with forward-thinking mindsets and teams. If you're interested in working together or would like to learn more about my experience and skill set, please don't hesitate to reach out.
 
