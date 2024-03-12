@@ -1188,3 +1188,12 @@ input, textarea {
   font-size: 14px;
   font-style: italic;
 }
+
+.wiggle:hover{
+  animation: wiggleAnimation .6s linear;
+}
+
+@keyframes wiggleAnimation {
+  0%,100%{transform: translateY(0);}
+  40%{transform: translateY(-4px);}
+}
