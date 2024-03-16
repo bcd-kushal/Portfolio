@@ -89,7 +89,7 @@ FORM.addEventListener("submit", async function (e) {
     document.getElementById("message").value = "";
 
     // listen to backend --------------------------------->>
-    let response = await fetch("https://kushal-server.up.railway.app/", {
+    let response = await fetch("https://kushal-server.up.railway.app/portfolio/contact-me", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -98,7 +98,12 @@ FORM.addEventListener("submit", async function (e) {
             name: form_name,
             email: form_mail,
             message: form_msg,
-            visiting_url: window.location.href,
+            origin: {
+                href: window.location.href,
+                host: window.location.hostname,
+                protocol: window.location.protocol,
+                origin: window.location.origin
+            }
         }),
     });
 
