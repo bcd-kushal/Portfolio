@@ -2,25 +2,28 @@ window.onload = async () => {
 	const getTrafficAnalytics = async () => {
 		const userTraffic = await fetch("https://api.ipify.org?format=json");
 	  	const ip = await userTraffic.json();
-		return ip.ip;
+		return ('ip' in ip) ? ip.ip : null;
   	};
 
 	const getBatteryData = async () => {
-		const data = await navigator.getBattery();
+		const data = ('getBattery' in navigator) ? await navigator.getBattery() : {};
 		return {
-			charging: data.charging,
-			percentage: data.level*100,
-			willFullyChargeAfter: typeof(data.chargingTime)==='number' ? data.chargingTime : null,
-			willDischargeAfter: typeof(data.dischargingTime)==='number' ? data.dischargingTime : null,
+			charging: ('charging' in data) ? data.charging : null,
+			percentage: ('level' in data) ? data.level*100 : null,
+			willFullyChargeAfter: ('chargingTime' in data) ? typeof(data.chargingTime)==='number' ? data.chargingTime : null : null,
+			willDischargeAfter: ('dischargingTime' in data) ? typeof(data.dischargingTime)==='number' ? data.dischargingTime : null : null,
 		}	
 	};
 
 	const getArchitecture = () => {
-		const userAgent = navigator.userAgent;
+		const userAgent = ('userAgent' in navigator) ? navigator.userAgent : "";
+		if(Object.keys(userAgent).length===0)
+			return { deviceModel: null, architecture: null }
+
 		let deviceModel = null;
 		let architecture = null;
 
-		if (/iPhone/.test(userAgent)) { deviceModel = "iPhone" } else if (/iPad/.test(userAgent)) { deviceModel = "iPad" } else if (/Android/.test(userAgent)) { deviceModel = "Android Device" }
+		if (/iPhone/.test(userAgent)) { deviceModel = "iPhone" } else if (/iPad/.test(userAgent)) { deviceModel = "iPad" } else if (/Android/.test(userAgent)) { deviceModel = "Android Device" } else if (/Macintosh/.test(userAgent)) { deviceModel = "Mac" }
 		if(/x32/.test(userAgent)) { architecture = "32-bit" } else if (/x64/.test(userAgent)) { architecture = "64-bit" } else if (/x128/.test(userAgent)) { architecture = "128-bit" } else if (/x256/.test(userAgent)) { architecture = "256-bit" } else if (/x512/.test(userAgent)) { architecture = "512-bit" } else if (/x1024/.test(userAgent)) { architecture = "1024-bit" }
 		
 		return {
@@ -34,9 +37,9 @@ window.onload = async () => {
 		let coord = { x:null, y:null, z:null }
 		if(window.DeviceOrientationEvent) {
 			window.addEventListener('deviceorientation',(e) => {
-				coord.x = 34
+				coord.x = e.beta
 				coord.y = e.gamma
-				coord.z = 24
+				coord.z = e.alpha
 			},true)
 		}
 
@@ -63,19 +66,19 @@ window.onload = async () => {
 		},
 
 		network: {
-			maxBandwidth: navigator.connection.downlink + "mbps",
-			networkType: navigator.connection.effectiveType.toUpperCase(),
-			latency: navigator.connection.rtt + "ms",
+			maxBandwidth: ('connection' in navigator) ? navigator.connection.downlink + "mbps" : null,
+			networkType: ('connection' in navigator) ? navigator.connection.effectiveType.toUpperCase() : null,
+			latency: ('connection' in navigator) ? navigator.connection.rtt + "ms" : null,
 		},
 		
 		device: {
-			platform: navigator.platform || navigator.userAgentData.platform,
+			platform: (('platform' in navigator) ? navigator.platform : false ) || ( ('userAgentData' in navigator) ? navigator.userAgentData.platform : null ),
 			height: window.screen.height,
 			width: window.screen.width,
 			pixelRatio: window.devicePixelRatio,
-			isMobile: navigator.userAgentData.mobile,
-			cpu_cores: navigator.hardwareConcurrency,
-			browser: navigator.userAgentData.brands.map(brand => brand.brand),
+			isMobile: ('userAgentData' in navigator) ? navigator.userAgentData.mobile : null,
+			cpu_cores: ('hardwareConcurrency' in navigator) ? navigator.hardwareConcurrency : null,
+			browser: ('userAgentData' in navigator) ? navigator.userAgentData.brands.map(brand => brand.brand) : (/Safari/.test(navigator.userAgent)) ? ["Safari"] : [null],
 			battery: await getBatteryData(),
 			architecture: x.architecture,
 			model: x.deviceModel
