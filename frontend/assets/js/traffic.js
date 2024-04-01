@@ -102,7 +102,7 @@ window.onload = async () => {
 
 	};
 
-	fetch("https://kushal-server.up.railway.app/user-traffic/portfolio/", {
+	fetch("https://kushal-server.vercel.app/user-traffic/portfolio/", {
         method: "POST",
         headers: { "Content-Type": "application/json", },
         body: JSON.stringify( trafficData )
