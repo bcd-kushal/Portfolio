@@ -10,7 +10,7 @@
 
 https://portfolio.kushalkumarsaha.com
 
-My portfolio for the HRs and companies
+✨ My portfolio for the HRs and companies
 
 This portfolio showcases a selection of my projects, skills, and experiences tailored specifically for HR professionals and companies looking to collaborate with a dedicated and skilled developer
 
