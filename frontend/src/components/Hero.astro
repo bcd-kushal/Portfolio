@@ -1,0 +1,50 @@
+---
+import ChevronDownSVG from "./svgs/ChevronDownSVG.astro";
+import HeroBanner from "./utils/HeroBanner.astro";
+
+
+---
+
+<section>
+    <div>
+        <HeroBanner />
+        <span class="scroll-down-indicator"><ChevronDownSVG dimensions="32" /></span>
+    </div>
+</section>
+
+<style lang="scss">
+    section {
+        height: 200dvh;
+        position: relative;
+
+        div {
+            height: 100dvh;
+
+            position: sticky;
+            top: 0;
+            display: grid;
+            place-items: center;
+
+            .scroll-down-indicator {
+                position: absolute;
+                bottom: 36px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                color: #fff6;
+
+                animation: wiggleHighlight 10s linear infinite;
+            }
+        }
+
+    }
+
+    @keyframes wiggleHighlight {
+        0%, 88% { transform: translate(-50%, 0); }
+        91%     { transform: translate(-50%, -16px); }
+        93%     { transform: translate(-50%, 0px); }
+        95%     { transform: translate(-50%, -6px); }
+        97%     { transform: translate(-50%, 2px); }
+        100%    { transform: translate(-50%, 0px); }
+    }
+</style>
