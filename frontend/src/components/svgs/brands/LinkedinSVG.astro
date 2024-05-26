@@ -1,0 +1,9 @@
+---
+import type { SVGType } from "../../../defaults/types"
+
+const props:SVGType = Astro.props as SVGType
+---
+
+<svg xmlns="http://www.w3.org/2000/svg" width={props.dimensions||"16"} height={props.dimensions||"16"} viewBox="0 0 24 24" fill={props.fill||"none"} stroke={props.stroke||"currentColor"} stroke-width={props.strokeWidth||"2"} stroke-linecap="round" stroke-linejoin="round" class={props.class||""}>
+    <path d="M2 7v10"/><path d="M6 5v14"/><rect width="12" height="18" x="10" y="3" rx="2"/>
+</svg>
