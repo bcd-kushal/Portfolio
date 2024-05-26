@@ -1,14 +1,35 @@
 ---
-import PdfDownload from "../components/utils/PdfDownload.astro";
-
+import Sidebar from "../components/Sidebar.astro"
+import Hero from "../components/Hero.astro"
+import About from "../components/About.astro"
+import Career from "../components/Career.astro"
+import Projects from "../components/Projects.astro"
+import Skills from "../components/Skills.astro"
+import Services from "../components/Services.astro"
+import Contact from "../components/Contact.astro"
+import Footer from "../components/Footer.astro"
 
 ---
 
-<section>
-    <PdfDownload />
-</section>
+<Sidebar />
+<main>
+    <Hero />
+    <About />
+    <Career />
+    <Projects />
+    <Skills />
+    <Services />
+    <Contact />
+    <Footer />
+</main>
+
 
 <style lang="scss">
-    section {
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
     }
 </style>
