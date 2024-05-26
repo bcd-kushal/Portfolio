@@ -1,0 +1,35 @@
+---
+import type { SidebarDataType } from "../../defaults/types"
+import DynamicSVG from "./DynamicSVG.astro"
+const { title, svg, link, isActive, external }: SidebarDataType = Astro.props as SidebarDataType
+---
+
+<a href={link} class={isActive ? "active" : ""} target={external ? "_blank" : "_self"} >
+    {svg ? <DynamicSVG as={svg} dimensions={18} /> : <></> }
+    <span>{title}</span>
+</a>
+
+<style lang="scss">
+    div, a {
+        color: #fff6;
+        padding: 18px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 11px;
+        border-left: 3px solid transparent;
+        text-decoration: none;
+        transition: .75s;
+
+        &:hover {
+            color: white;
+            transition: .55s;
+        }
+    }
+
+    .active {
+        border-left-color: white;
+        color: white;
+    }
+</style>
