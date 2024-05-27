@@ -1,8 +1,6 @@
 ---
-import ChevronDownSVG from "./svgs/ChevronDownSVG.astro";
-import HeroBanner from "./utils/HeroBanner.astro";
-
-
+import ChevronDownSVG from "./svgs/ChevronDownSVG.astro"
+import HeroBanner from "./utils/HeroBanner.astro"
 ---
 
 <section>
@@ -14,14 +12,17 @@ import HeroBanner from "./utils/HeroBanner.astro";
 
 <style lang="scss">
     section {
-        height: 200dvh;
-        position: relative;
+        position: fixed;
+        width: 100%;
+        padding-left: 110px;
+
+        @media (max-width: 640px) {
+            padding-left: 0;
+        }
 
         div {
+            position: relative;
             height: 100dvh;
-
-            position: sticky;
-            top: 0;
             display: grid;
             place-items: center;
 
@@ -36,7 +37,6 @@ import HeroBanner from "./utils/HeroBanner.astro";
                 animation: wiggleHighlight 10s linear infinite;
             }
         }
-
     }
 
     @keyframes wiggleHighlight {
