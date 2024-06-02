@@ -7,7 +7,7 @@ import ServicesSVG from "../svgs/sidebar/ServicesSVG.astro"
 import ContactSVG from "../svgs/sidebar/ContactSVG.astro"
 import DownloadSVG from "../svgs/DownloadSVG.astro"
 
-const { as, content } = Astro.props 
+const { as } = Astro.props 
 ---
 
 { as==='download'           && <DownloadSVG /> }
@@ -15,7 +15,7 @@ const { as, content } = Astro.props
 <!-- sidebar --------------------------------------------->
 { as==='about'          && <AboutSVG /> }
 { as==='career'         && <CareerSVG /> }
-{ as==='project'       && <ProjectSVG /> }
+{ as==='project'        && <ProjectSVG /> }
 { as==='skills'         && <SkillsSVG /> }
 { as==='services'       && <ServicesSVG /> }
 { as==='contact'        && <ContactSVG /> }
