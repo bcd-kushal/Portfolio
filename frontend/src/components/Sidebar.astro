@@ -21,12 +21,12 @@ const sidebarDataLayout: SidebarDataLayoutType = {
 
 <aside class="scrollbar-hide">
     <section>
-        {sidebarDataLayout.top.map((item,index) => (
+        {sidebarDataLayout.top.map((item) => (
             <SidebarLink title={item.title} svg={item.svg} link={item.link ? item.link : "#"} isActive={item.isActive || false} external={item.external || false} />
         ))}
     </section>
     <section>
-        {sidebarDataLayout.bottom.map((item,index) => (
+        {sidebarDataLayout.bottom.map((item) => (
             <SidebarLink title={item.title} svg={item.svg} link={item.link ? item.link : "#"} isActive={item.isActive || false} external={item.external || false} />
         ))}
     </section>
