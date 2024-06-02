@@ -14,6 +14,7 @@
     "@astrojs/sitemap": "^3.1.5",
     "@fontsource-variable/outfit": "^5.0.13",
     "astro": "^4.9.1",
+    "gsap": "^3.12.5",
     "sass": "^1.77.2",
     "schema-dts": "^1.1.2",
     "typescript": "^5.4.5"
