@@ -13,6 +13,8 @@ https://portfolio.kushalkumarsaha.com
 
 ✨ My portfolio summarizing my work expertise and the skills I hone
 
+> `Check out beta portfolio:` &nbsp; https://kushal-astro.vercel.app
+
 This portfolio showcases a selection of my projects, skills, and experiences tailored specifically for HR professionals and companies looking to collaborate with a dedicated and skilled developer
 
 <table>
