@@ -17,8 +17,8 @@ This portfolio showcases a selection of my projects, skills, and experiences tai
 
 <table>
   <tr><td>🌐 Main website</td><td>https://kushalkumarsaha.com</td></tr>
-  <tr><td>🤝 Services</td><td>https://services.kushalkumarsaha.com</td></tr>
-  <tr><td>📑 Blogs</td><td>https://blogs.kushalkumarsaha.com</td></tr>
+  <tr><td>🤝 Services</td><td>https://kushalkumarsaha.com/services</td></tr>
+  <tr><td>📑 Blogs</td><td>https://kushalkumarsaha.com/blogs</td></tr>
 </table> 
 
 ## :speech_balloon: Let's Connect
