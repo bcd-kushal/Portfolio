@@ -34,7 +34,7 @@ I consistently seek new opportunities to collaborate with forward-thinking minds
   <tr><td>Instagram</td><td>https://instagram.com/dev.kushalkumar</td></tr>
 </table> 
 
-Thanks for visiting my portfolio! Ping up to bring your projects to life.
+Thanks for visiting my portfolio! Ping to bring your projects to life.
 
 Best regards,
 <br>
