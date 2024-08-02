@@ -1,9 +1,0 @@
----
-import type { SVGType } from "../../../defaults/types"
-
-const props:SVGType = Astro.props as SVGType
----
-
-<svg xmlns="http://www.w3.org/2000/svg" width={props.dimensions||"16"} height={props.dimensions||"16"} viewBox="0 0 24 24" fill={props.fill||"none"} stroke={props.stroke||"currentColor"} stroke-width={props.strokeWidth||"2"} stroke-linecap="round" stroke-linejoin="round" class={props.class||""}>
-    <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
-</svg>
