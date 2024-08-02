@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets"
+import RightArrowSVG from "../../../images/svg/rightArrow.svg"
+
+---
+
+<section id="hero" class="max-md:px-4 pb-10 relative left-1/2 -translate-x-1/2 w-[100dvw] max-w-[1250px] h-[calc(100dvh_-_44px)] md:h-[calc(100dvh_-_56px)] grid grid-cols-1 md:grid-cols-[250px_1fr] grid-rows-[1fr_auto_auto] gap-x-[100px] items-center md:items-end">
+    <span class="row-span-10"></span>
+    <h1 class="px-0 text-7xl tracking-tighter pb-3 -translate-x-1">Kushal Kumar</h1>
+    <span class="flex items-center justify-start gap-2 text-xl opacity-30 hover:opacity-100 cursor-pointer transition-all duration-300"><p>Download CV</p> <Image src={RightArrowSVG} alt="Indicator" width={20} height={20} decoding="async" loading="eager" /></span>
+</section>

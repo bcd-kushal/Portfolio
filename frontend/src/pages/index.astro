@@ -1,0 +1,48 @@
+---
+import Template from "../layouts/Template.astro"
+import About from "../layouts/About.astro"
+import AboutThumbnails from "../layouts/AboutThumbnails.astro"
+import AboutHero from "../components/aboutSection/hero/AboutHero.astro"
+import Footer from "../components/aboutSection/footer/Footer.astro"
+// import BGAnimation from "../components/aboutSection/bgAnimation/BGAnimation.astro"
+
+---
+
+<Template active="about">
+    <AboutHero />
+    <div id="details" class="relative left-1/2 -translate-x-1/2 w-[100dvw] max-w-[1250px] grid grid-cols-1 md:grid-cols-[250px_1fr] gap-x-[100px]">
+        <AboutThumbnails />
+        <About />
+
+        <Footer />
+    </div>
+</Template>
+
+<style is:global>
+    ::-webkit-scrollbar {
+        background: transparent;
+        width: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c4d6dd20;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #0ba0db60;
+    }
+    *, html, body {
+        scroll-behavior: smooth;
+    }
+
+    .slide-up { animation: slideUp .75s forwards; }
+    .slide-up-hero { animation: slideUpHero .75s forwards; }
+
+    @keyframes slideUp {
+        from { transform: translateY(70px);  }
+        to   { transform: translateY(0px); }
+    }
+    
+    @keyframes slideUpHero {
+        from { transform: translate(-50%,70px);  }
+        to   { transform: translate(-50%,0px); }
+    }
+</style>

@@ -1,0 +1,28 @@
+---
+---
+
+<script>
+    import { gsap } from 'gsap' 
+    import { ScrollTrigger } from 'gsap/ScrollTrigger'
+    import { MotionPathPlugin } from 'gsap/MotionPathPlugin'
+    gsap.registerPlugin(ScrollTrigger, MotionPathPlugin)
+
+    const WRAPPER = "#smooth-wrapper"
+    const HERO = "#hero"
+    const DETAILS = "#details"
+
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: WRAPPER,
+            start: "top top",
+            end: "+=900",
+            scrub: 2,
+        }, 
+    })
+
+    timeline.to(HERO, {
+        y: 500,
+        ease: "power2.out",
+        duration: 3,
+    }, 0)
+</script>

@@ -1,0 +1,42 @@
+---
+import Metadata from "../components/meta/Metadata.astro"
+import SchemaOrg from "../components/meta/SchemaOrg.astro"
+import Favicons from "../components/headSection/favicon/Favicons.astro"
+// import TrackTraffic from "../components/traffic/TrackTraffic.astro"
+import Tabs from "../components/tabsSection/Tabs.astro"
+import "../static/design/fontFamilies.css"
+import GSAP from "../components/_GSAP/about/GSAP.astro"
+
+// HEAD TAG DATA ------------------------------------------------
+const TITLE = "Kushal Kumar: Portfolio"
+
+const { active } = Astro.props as { active: "about" | "work" }
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <Metadata />
+    <!-- title -->
+    <title>{TITLE}</title>
+    <Favicons />
+    <SchemaOrg />
+</head>
+<body class="bg-neutral-950 text-white" id="smooth-wrapper">
+    <Tabs active={active} />
+    <slot />
+    <GSAP />
+    <!-- <TrackTraffic /> -->
+</body>
+</html>
+
+<style is:global>
+
+    * {
+        border: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'modernOutfit', 'mongo', 'cambria', 'code', 'mongoItalic';
+    }
+</style>

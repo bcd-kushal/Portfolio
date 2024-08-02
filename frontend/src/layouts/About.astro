@@ -1,0 +1,51 @@
+---
+import { ABOUT_SECTIONS } from "../static/constants/sections"
+import SectionWrapper from "../components/aboutSection/sectionWrapper/SectionWrapper.astro"
+import SummaryWrapper from "../components/aboutSection/summaryWrapper/SummaryWrapper.astro"
+import WorkExperience from "../components/aboutSection/_sections/WorkExperience.astro"
+import Education from "../components/aboutSection/_sections/Education.astro"
+import Projects from "../components/aboutSection/_sections/Projects.astro"
+import Skills from "../components/aboutSection/_sections/Skills.astro"
+import GetInTouch from "../components/aboutSection/_sections/GetInTouch.astro"
+import BrandsWorkedWith from "../components/aboutSection/_sections/BrandsWorkedWith.astro"
+import AwardsRecognition from "../components/aboutSection/_sections/AwardsRecognition.astro"
+
+---
+
+<main class="flex flex-col justify-start pb-[100px]">
+    <SummaryWrapper />
+
+    {ABOUT_SECTIONS.filter(( _, index ) => index !== 0 ).map(({ label, id }, index) => (
+        <SectionWrapper title={label} id={id} noTopPadding={index > 0 ? false : true}>
+            { id==="work_experience"        ? <WorkExperience /> :
+              id==="education"              ? <Education /> :
+              id==="projects"               ? <Projects /> :
+              id==="skills"                 ? <Skills /> :
+              id==="get_in_touch"           ? <GetInTouch /> :
+              id==="brands_i_worked_with"   ? <BrandsWorkedWith /> :
+                                              <AwardsRecognition />  
+            }
+        </SectionWrapper>
+    ))}
+</main>
+
+<!-- <script>
+    //////////////////////////////// ANIMATE ON SCROLL SCRIPT LOGIC HERE //////////////////////////////////
+    const heroTab           = document.querySelector("#hero") as HTMLElement
+
+    const summaryTab        = document.querySelector("#summary") as HTMLElement
+    const experienceTab     = document.querySelector("#work_experience") as HTMLElement
+    const educationTab      = document.querySelector("#education") as HTMLElement
+    const projectsTab       = document.querySelector("#projects") as HTMLElement
+    const skillsTab         = document.querySelector("#skills") as HTMLElement
+    const getInContactTab   = document.querySelector("#get_in_touch") as HTMLElement
+    const awardsTab         = document.querySelector("#awards_and_recognition") as HTMLElement
+
+    const sections = [ summaryTab, experienceTab, educationTab, projectsTab, skillsTab, getInContactTab, awardsTab ]
+    let sectionAOSIsDone = new Array(sections.length).fill(false)
+
+    const MAX_AOS_SOFT_BOUNDARY = 0
+    const AOS_SOFT_BOUNDARY = Math.max(innerHeight - MAX_AOS_SOFT_BOUNDARY, 0)
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+</script> -->

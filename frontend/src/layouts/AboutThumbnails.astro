@@ -1,0 +1,31 @@
+---
+import { ABOUT_SECTIONS as links } from "../static/constants/sections"
+---
+
+<aside class="sticky top-14 max-md:hidden h-[calc(100dvh_-_56px)] md:row-span-2 flex items-center justify-start text-white/35 text-sm">
+    <ul class="space-y-2 *:transition-all *:duration-300">
+        {links.map(({ label, id }) => (
+            <li class="hover:text-white cursor-pointer w-fit py-1 pr-4" id={`${id}_link`}>{ label }</li>
+        ))}
+    </ul>
+</aside>
+
+<script>
+    const scrollToSection = (targetId:string) => 
+        (document.getElementById(targetId) as HTMLElement)
+            .scrollIntoView({
+                behavior:"smooth",
+                block:"center",
+                inline:"center"
+            })
+
+    document.getElementById( "summary_link" )?.addEventListener( "click", () => scrollToSection("summary") )
+    document.getElementById( "work_experience_link" )?.addEventListener( "click", () => scrollToSection("work_experience") )
+    document.getElementById( "education_link" )?.addEventListener( "click", () => scrollToSection("education") )
+    document.getElementById( "projects_link" )?.addEventListener( "click", () => scrollToSection("projects") )
+    document.getElementById( "skills_link" )?.addEventListener( "click", () => scrollToSection("skills") )
+    document.getElementById( "get_in_touch_link" )?.addEventListener( "click", () => scrollToSection("get_in_touch") )
+    // document.getElementById( "brands_i_worked_with_link" )?.addEventListener( "click", () => scrollToSection("brands_i_worked_with") )
+    document.getElementById( "awards_and_recognition_link" )?.addEventListener( "click", () => scrollToSection("awards_and_recognition") )
+
+</script>

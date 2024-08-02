@@ -1,0 +1,20 @@
+---
+import { KUSHAL_EMAIL_DEFAULT, KUSHAL_WHATSAPP, KUSHAL_LINKEDIN, KUSHAL_INSTAGRAM, KUSHAL_GITHUB } from "../../../static/constants/socials"
+
+const contactDetails: { title: string, subtitle?: string, link: string, seoTitle: string }[] = [
+    { title: "Email", subtitle: KUSHAL_EMAIL_DEFAULT, link: `mailto:${KUSHAL_EMAIL_DEFAULT}`, seoTitle: KUSHAL_EMAIL_DEFAULT },
+    { title: "Whatsapp", subtitle: "+91 9123686897", link: KUSHAL_WHATSAPP, seoTitle: "+91 9123686897" },
+    { title: "LinkedIn", subtitle: "", link: KUSHAL_LINKEDIN, seoTitle: "@dev-kushal" },
+    { title: "GitHub", subtitle: "", link: KUSHAL_GITHUB, seoTitle: "@bcd-kushal" },
+    { title: "Instagram", subtitle: "", link: KUSHAL_INSTAGRAM, seoTitle: "@dev-kushal" },
+]
+---
+
+<div class="grid grid-cols-[auto] md:grid-rows-6 md:grid-cols-[280px_1fr] gap-x-24 gap-y-12 md:gap-y-[34px] md:grid-flow-col items-start justify-start">
+    { contactDetails.map(({ title, subtitle, link, seoTitle }, index ) => (
+        <a href={link} title={`${title}: ${seoTitle}`} class={index < 2 ? `md:row-span-3 ${index === 1 ? "md:self-end" : ""}` : `md:row-span-2 ${index === 4 ? "md:self-end" : index === 3 ? "md:self-center" : ""}`}>
+            <h3 class="text-2xl">{title}</h3> 
+            { subtitle ? <span class="text-white/30 text-lg">{subtitle}</span> : <></> }
+        </a>
+    ))}
+</div>

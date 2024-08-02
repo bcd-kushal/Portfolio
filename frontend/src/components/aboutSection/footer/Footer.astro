@@ -1,0 +1,38 @@
+--- 
+import AstroSVG from "../../../images/svg/astro.svg"
+import TailwindSVG from "../../../images/svg/tailwind.svg"
+import TSSVG from "../../../images/svg/ts.svg"
+import DockerSVG from "../../../images/svg/docker.svg"
+// import StarSVG from "../../../images/svg/star.svg"
+import RightArrowSVG from "../../../images/svg/rightArrow.svg"
+import { Image } from "astro:assets"
+
+---
+
+<footer class="h-[calc(100dvh_-_56px)] relative max-md:px-4 pb-5 md:pb-10 flex flex-col gap-5 items-start justify-center">
+    
+    <div class="text-4xl md:text-5xl">Kushal Kumar Portfolio</div>
+
+    <div class="grid grid-cols-1 md:grid-cols-[repeat(3,auto)] grid-rows-3 md:grid-rows-1 gap-x-20 *:text-lg *:max-md:py-1.5 text-white *:opacity-30 *:flex *:items-center *:justify-start *:gap-2 *:transition-all *:duration-500 *:cursor-pointer">
+        <span class="hover:opacity-100"><p>Work</p> <Image src={RightArrowSVG} alt="Indicator" width={20} height={20} decoding="async" loading="lazy" /></span>
+        <span class="hover:opacity-100"><p>Get in Touch</p> <Image src={RightArrowSVG} alt="Indicator" width={20} height={20} decoding="async" loading="lazy" /></span>
+        <span class="hover:opacity-100"><p>Download CV</p> <Image src={RightArrowSVG} alt="Indicator" width={20} height={20} decoding="async" loading="lazy" /></span>
+    </div>
+    <!-- <a href="https://github.com/bcd-kushal/portfolio" target="_blank" class="flex items-center justify-start gap-1.5">
+        <Image src={StarSVG} alt="GitHub" width={18} height={18} title="GitHub" draggable="false" class={`invert`} />
+        <span>Star this Project on GitHub</span>
+    </a> -->
+
+
+
+    <div class="absolute max-md:w-full left-0 md:right-4 bottom-5 md:bottom-10 text-white/30 text-xs flex flex-col items-center md:items-end justify-end">
+        <div class="flex items-center justify-start gap-4 mb-2">
+            <Image src={AstroSVG} alt="Astro" width={15} height={15} title="Astro" draggable="false" class={``} decoding="async" loading="lazy" />
+            <Image src={TailwindSVG} alt="Tailwind" width={15} height={15} title="Tailwind" draggable="false" class={``} decoding="async" loading="lazy" />
+            <Image src={TSSVG} alt="TS" width={15} height={15} title="TypeScript" draggable="false" class={``} decoding="async" loading="lazy" />
+            <Image src={DockerSVG} alt="Docker" width={15} height={15} title="Docker" draggable="false" class={``} decoding="async" loading="lazy" />
+        </div>
+        <span>Licensed under MIT.</span>
+        <span>Copyright {new Date().getFullYear()} Kushal Kumar.</span>
+    </div>
+</footer>
