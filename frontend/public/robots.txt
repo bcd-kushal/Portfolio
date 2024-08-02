@@ -1,6 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow:
-Crawl-Delay: 0
-
-Sitemap: https://portfolio.kushalkumarsaha.com/sitemap-index.xml
