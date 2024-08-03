@@ -1,0 +1,62 @@
+---
+
+---
+
+<script>
+    // === [ TYPES ] ====================================================================
+    type SectionThresholdType = { id: string, threshold: { low:number, high: number } }
+    
+    // === [ DATA AND IDS ] ====================================================================
+    const sectionIds            = [ "hero", "summary", "work_experience", "education", "projects", "skills", "get_in_touch", "awards_and_recognition", "footer" ]
+    const sectionLinks          = sectionIds.filter(( _, index ) => index !== 0 && index !== sectionIds.length - 1 ).map( id => `${id}_link` )
+    const sectionsYThreshold: SectionThresholdType[]    
+                                = sectionIds.map( id => ({
+        id,
+        threshold:  id === "hero" ?             { low: -700, high: 100 } :
+                    id === "footer" ?           { low: 56,   high: 468 } :
+                    id === "summary" ?          { low: -206, high: 618 } :
+                    id === "work_experience" ?  { low: 39,   high: 780 } :
+                                                { low: -136, high: 542 }
+    }))
+
+    const animatedSections      = sectionIds.map( _ => false )
+
+
+    // === [  ] =========================================================== 
+
+    const sectionAnimate = ( details: SectionThresholdType, onMeetup: () => void ) => {
+        const div = document.getElementById(details.id) as HTMLElement
+        const pos = div.getBoundingClientRect().y
+
+        if( pos >= details.threshold.low && pos <= details.threshold.high )
+            onMeetup()
+    }
+
+    const checkSectionInViewport = () => sectionsYThreshold.forEach(( section, index ) => {
+        if( !animatedSections[index] ) {
+            sectionAnimate(section, () => {
+                console.log(`met id: ${section.id}`)
+                animatedSections[index] = true
+            })
+        }
+
+        // sidebar glowup ...............
+        sectionAnimate(section, () => {
+            const linkDiv = index > 0 && index < sectionIds.length-1 ? document.getElementById(sectionLinks[index-1]) as HTMLElement : null
+
+            // disable glow for all first
+            sectionLinks.forEach(linkId => {
+                if(linkId !== `${linkDiv}_link`) {
+                    (document.getElementById(linkId) as HTMLElement).animate({ color: "#fff3" }, { duration: 500, fill: "forwards" })
+                }
+            })
+
+            // enable glow for active if available
+            if(linkDiv)
+                linkDiv.animate({ color: "#fff" }, { duration: 300, fill: "forwards" })
+        })
+    })
+
+    addEventListener("scroll", checkSectionInViewport)
+    checkSectionInViewport()
+</script>
