@@ -11,21 +11,18 @@ import { ABOUT_SECTIONS as links } from "../static/constants/sections"
 </aside>
 
 <script>
-    const scrollToSection = (targetId:string) => 
+    const scrollToSection = (targetId:string, center?:boolean) => 
         (document.getElementById(targetId) as HTMLElement)
             .scrollIntoView({
                 behavior:"smooth",
-                block:"center",
-                inline:"center"
+                inline: center ? "center" : "start",
+                block: center ? "center" : "start",
             })
 
-    document.getElementById( "summary_link" )?.addEventListener( "click", () => scrollToSection("summary") )
-    document.getElementById( "work_experience_link" )?.addEventListener( "click", () => scrollToSection("work_experience") )
-    document.getElementById( "education_link" )?.addEventListener( "click", () => scrollToSection("education") )
-    document.getElementById( "projects_link" )?.addEventListener( "click", () => scrollToSection("projects") )
-    document.getElementById( "skills_link" )?.addEventListener( "click", () => scrollToSection("skills") )
-    document.getElementById( "get_in_touch_link" )?.addEventListener( "click", () => scrollToSection("get_in_touch") )
-    // document.getElementById( "brands_i_worked_with_link" )?.addEventListener( "click", () => scrollToSection("brands_i_worked_with") )
-    document.getElementById( "awards_and_recognition_link" )?.addEventListener( "click", () => scrollToSection("awards_and_recognition") )
+    const sectionIds            = [ "summary_link", "work_experience_link", "education_link", "projects_link", "skills_link", "get_in_touch_link", "awards_and_recognition_link" ]
+    const sectionsToBeCentred   = [ "summary_link", "work_experience_link" ]
 
+    sectionIds.forEach(id => 
+        document.getElementById(id)?.addEventListener( "click", () => scrollToSection(id.split("_link")[0], sectionsToBeCentred.includes(id) ? true : false) )
+    )
 </script>
