@@ -1,4 +1,19 @@
 ---
+import TechLogo from "../../_techLogo/TechLogo.astro"
+import { SKILLS } from "../../../static/data/about/skills/skillsData"
+
 
 ---
 
+<div class="grid grid-cols-1 md:grid-rows-[repeat(3,auto)] md:grid-cols-2 gap-x-14 gap-y-12 md:grid-flow-col items-start justify-start cursor-default">
+    { SKILLS.map(({ category, skills }) => (
+        <div class="space-y-5">
+            <h3 class="text-2xl">{category}</h3>
+            <ul class="grid grid-cols-2 items-start justify-start gap-3 gap-y-5 text-lg text-white/40">
+                { skills.map(skill => (
+                    <li class="*:h-[18px] md:*:h-6 flex items-center justify-start gap-3"><TechLogo name={skill.svg} /><h4 class="flex items-center">{skill.label}</h4></li>
+                )) }
+            </ul>
+        </div>
+    ))}
+</div>
