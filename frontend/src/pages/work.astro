@@ -1,14 +1,12 @@
 ---
+import type { PageType } from "../static/types/types"
 import Template from "../layouts/Template.astro"
 
+const activeTab: PageType["active"] = "work"
 ---
 
-<Template active="work">
+<Template active={activeTab}>
     <div class="min-h-[200dvh]">Projects here</div>
 </Template>
 
-<style is:global>
-    ::-webkit-scrollbar {
-        display: none;
-    }
-</style>
+<!-- scripts ----------------------->
