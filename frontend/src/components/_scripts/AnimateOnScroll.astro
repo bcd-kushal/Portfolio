@@ -3,6 +3,9 @@
 ---
 
 <script>
+    let scrollDir: "up" | "down" = "down"
+    let lastScrollY: number = scrollY
+
     // === [ TYPES ] ====================================================================
     type SectionThresholdType = { id: string, threshold: { low:number, high: number } }
     
@@ -22,7 +25,7 @@
     const animatedSections      = sectionIds.map( _ => false )
 
 
-    // === [  ] =========================================================== 
+    // === [ SECTION ANIMATE ] =========================================================== 
 
     const sectionAnimate = ( details: SectionThresholdType, onMeetup: () => void ) => {
         const div = document.getElementById(details.id) as HTMLElement
@@ -35,28 +38,36 @@
     const checkSectionInViewport = () => sectionsYThreshold.forEach(( section, index ) => {
         if( !animatedSections[index] ) {
             sectionAnimate(section, () => {
-                console.log(`met id: ${section.id}`)
+                (document.getElementById(section.id) as HTMLElement).animate({ opacity: 100 }, { duration: 600, fill: "forwards" })
                 animatedSections[index] = true
             })
         }
-
-        // sidebar glowup ...............
-        sectionAnimate(section, () => {
-            const linkDiv = index > 0 && index < sectionIds.length-1 ? document.getElementById(sectionLinks[index-1]) as HTMLElement : null
-
-            // disable glow for all first
-            sectionLinks.forEach(linkId => {
-                if(linkId !== `${linkDiv}_link`) {
-                    (document.getElementById(linkId) as HTMLElement).animate({ color: "#fff3" }, { duration: 500, fill: "forwards" })
-                }
-            })
-
-            // enable glow for active if available
-            if(linkDiv)
-                linkDiv.animate({ color: "#fff" }, { duration: 300, fill: "forwards" })
-        })
     })
 
-    addEventListener("scroll", checkSectionInViewport)
+    addEventListener("scroll", () => {
+        // SECTION ANIMATE --------------------
+        checkSectionInViewport()
+
+        // SIDEBAR TABS -----------------------
+        scrollDir = (scrollY > lastScrollY) ? "down" : "up"
+        lastScrollY = scrollY
+    })
     checkSectionInViewport()
+
+
+    // === [ SIDEBAR TABS ] ==================================================================
+    const ACTIVE_SIDEBAR_LINK_CLASSNAME = "active-sidebar"
+
+    const highlightSidebarTab = (id:string) => sectionLinks.forEach(link => {
+        if(link === id) (document.getElementById(link) as HTMLElement).classList.add(ACTIVE_SIDEBAR_LINK_CLASSNAME)
+        else            (document.getElementById(link) as HTMLElement).classList.remove(ACTIVE_SIDEBAR_LINK_CLASSNAME)
+    })
+
+    const observer: IntersectionObserver = new IntersectionObserver((entries) => 
+        entries.forEach(entry => {
+            if((scrollDir === "down" && entry.intersectionRatio >= 0.6 && entry.boundingClientRect.top >= 0) || (scrollDir === 'up' && entry.intersectionRatio >= 0.6 && entry.boundingClientRect.bottom <= window.innerHeight))
+                highlightSidebarTab(`${entry.target.id}_link`)
+        }), { threshold: 0.6 })
+
+    sectionIds.forEach(id => observer.observe(document.getElementById(id) as HTMLElement))
 </script>
