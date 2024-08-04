@@ -1,0 +1,29 @@
+---
+import type { PageType } from "../../static/types/types"
+const { active } = Astro.props as { active: PageType["active"] }
+
+---
+
+<!-- preloads, preconnects -->
+<link rel="preload" href="/woff/modernOutfit.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+{ active === "about" && <>
+    <link rel="prefetch" href="/work"/>
+    <link rel="prefetch" href="/blog"/>
+</> }
+
+{ active === "work" && <>
+    <link rel="prefetch" href="/"/>
+    <link rel="prefetch" href="/blog"/>
+</> }
+
+{ active === "blog" && <>
+    <link rel="prefetch" href="/"/>
+    <link rel="prefetch" href="/work"/>
+</> }
+
+{ active === "blog-article" && <>
+    <link rel="prefetch" href="/"/>
+    <link rel="prefetch" href="/work"/>
+    <link rel="prefetch" href="/blog"/>
+</> }
