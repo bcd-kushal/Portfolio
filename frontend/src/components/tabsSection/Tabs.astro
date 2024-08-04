@@ -1,16 +1,26 @@
 ---
-const { active } = Astro.props as { active: "about" | "work" }
+import type { PageType } from "../../static/types/types"
+
+const { active } = Astro.props as { active: PageType["active"] }
 
 ---
 
 {active==="about" ? 
-    <header class={`z-50 sticky sm:w-full top-0 flex items-center justify-center gap-6 text-sm max-md:pt-1.5 *:px-5 *:py-2.5 sm:*:py-4 sm:mb-1 bg-gradient-to-b from-neutral-950 from-45% md:from-35% to-transparent`}>
+    <header role="navigation" aria-label="Site Header" class={`z-50 sticky sm:w-full top-0 flex items-center justify-center gap-6 text-sm max-md:pt-1.5 *:px-5 *:py-2.5 sm:*:py-4 sm:mb-1 bg-gradient-to-b from-neutral-950 from-45% md:from-35% to-transparent transition-all duration-500`}>
         <span class="text-white">About</span>
-        <a href="/work" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Projects and Work" >Work</a>
+        <a href="/work" aria-label="Projects Site" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Projects and Work" >Work</a>
+        <a href="/blog" aria-label="Blog Site" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Blogs" >Blog</a>
+    </header>
+: active==="work" ?
+    <header role="navigation" aria-label="Site Header" class={`z-50 sticky sm:w-full top-0 flex items-center justify-center gap-6 text-sm max-md:pt-1.5 *:px-5 *:py-2.5 sm:*:py-4 sm:mb-1 bg-gradient-to-b from-neutral-950 from-45% md:from-35% to-transparent transition-all duration-500`}>
+        <a href="/" aria-label="Homepage" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Main website" >About</a>
+        <span class="text-white">Work</span>
+        <a href="/blog" aria-label="Blog Site" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Blogs" >Blog</a>
     </header>
 :
-    <header class={`z-50 sticky sm:w-full top-0 flex items-center justify-center gap-6 text-sm max-md:pt-1.5 *:px-5 *:py-2.5 sm:*:py-4 sm:mb-1 bg-gradient-to-b from-neutral-950 from-45% md:from-35% to-transparent`}>
-        <a href="/" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Main website" >About</a>
-        <span class="text-white">Work</span>
+    <header role="navigation" aria-label="Site Header" class={`z-50 sticky sm:w-full top-0 flex items-center justify-center gap-6 text-sm max-md:pt-1.5 *:px-5 *:py-2.5 sm:*:py-4 sm:mb-1 bg-gradient-to-b from-neutral-950 from-45% md:from-35% to-transparent transition-all duration-500`}>
+        <a href="/" aria-label="Homepage" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Main website" >About</a>
+        <a href="/work" aria-label="Projects Site" class="text-white/60 transition-colors duration-300 hover:text-white" aria-label="Projects and Work" >Work</a>
+        <span class="text-white">Blog</span>
     </header>
 }
