@@ -11,7 +11,7 @@ https://portfolio.kushalkumarsaha.com
 
 ✨ My portfolio summarizing my work expertise and the skills I hone.
 
-> `Check out beta portfolio:` &nbsp; https://kushal-cv.vercel.app
+> `Check out beta portfolio:` &nbsp; https://kushalkumarsaha.com
 
 This portfolio showcases a selection of my projects, skills, and experiences tailored as a dedicated and skilled developer
 
