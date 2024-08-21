@@ -5,7 +5,7 @@
 <img style="height:26px" title="typescript" src="https://user-images.githubusercontent.com/25181517/183890598-19a0ac2d-e88a-4005-a8df-1ee36782fde1.png"/> &nbsp;
 <img style="height:24px" title="nodeJS" src="https://github.com/bcd-kushal/Kushal-Kumar/assets/96081625/3e08afee-1aeb-4f78-ae89-f883f31b4731"/> &nbsp;
 <img style="height:25px" title="express" src="https://i.imgur.com/fZXQgWk.png" title="source: imgur.com" /> &nbsp;
-<img style="height:24px" title="supabase" src="https://i.imgur.com/h56M3eS.png" title="source: imgur.com" /> &nbsp;
+<img style="height:24px" title="supabase" src="https://i.imgur.com/h56M3eS.png" title="source: imgur.com" /> &nbsp; 
 
 https://portfolio.kushalkumarsaha.com
 
