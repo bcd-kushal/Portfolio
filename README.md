@@ -7,36 +7,31 @@
 <img style="height:25px" title="express" src="https://i.imgur.com/fZXQgWk.png" title="source: imgur.com" /> &nbsp;
 <img style="height:24px" title="supabase" src="https://i.imgur.com/h56M3eS.png" title="source: imgur.com" /> &nbsp;
 
-https://portfolio.kushalkumarsaha.com
+https://kushalkumarsaha.com
 
-✨ My portfolio summarizing my work expertise and the skills I hone.
+I'm pursuing my dream through my work, and exploring the meaning of freedom through my passion.
 
-> `Check out beta portfolio:` &nbsp; https://kushalkumarsaha.com
+> `Check out beta portfolio:` &nbsp; https://portfolio.kushalkumarsaha.com
 
-This portfolio showcases a selection of my projects, skills, and experiences tailored as a dedicated and skilled developer
+This portfolio showcases a selection of my projects, skills, and experiences tailored as a dedicated and skilled software developer
 
 <table>
   <tr><td>🌐 Main website</td><td>https://kushalkumarsaha.com</td></tr>
-  <tr><td>🤝 Services</td><td>https://services.kushalkumarsaha.com</td></tr>
-  <tr><td>📑 Blogs</td><td>https://kushalkumarsaha.com/blogs</td></tr>
+  <tr><td>📑 Blogs</td><td>https://kushalkumarsaha.com/blog</td></tr>
 </table> 
 
 ## :speech_balloon: Let's Connect
 
-I consistently seek new opportunities to collaborate with forward-thinking mindsets and teams. If you're interested in working together or would like to learn more about my experience and skill set, please don't hesitate to reach out.
+The only forward approach in the field of software is that **Practicality conquers Theoretical Knowledge**.  
 
 <table>
+  <tr><td>Whatsapp</td><td><a href="https://wa.me/+919123686897?text=Hi%20Kushal%2C%20I%20checked%20up%20your%20projects%20and%20would%20like%20to%20commission%20you%20with%20one%20of%20mine.%20Let%20me%20know%20when%20you%20are%20available%20to%20discuss%20further">+91 9123686897</a></td></tr>
   <tr><td>Email</td><td><a href="mailto:dev.kushal@icloud.com">dev@kushalkumarsaha.com</a></td></tr>
   <tr><td>Linkedin</td></td><td>https://linkedin.com/in/dev-kushal/</td></tr>
-  <tr><td>Docker Hub</td><td>https://hub.docker.com/r/kushalkumar02</td></tr>
   <tr><td>Instagram</td><td>https://instagram.com/dev.kushalkumar</td></tr>
 </table> 
 
 Thanks for visiting my portfolio! Ping to bring your projects to life.
-
-Best regards,
-<br>
-<a href="https://kushalkumarsaha.com/">Kushal Kumar Saha</a>
 
 <hr>
 
