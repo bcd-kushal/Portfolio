@@ -8,7 +8,7 @@
 <img style="height:24px" title="supabase" src="https://i.imgur.com/h56M3eS.png" title="source: imgur.com" /> &nbsp;
 
 https://kushalkumarsaha.com
- 
+
 I'm pursuing my dream through my work, and exploring the meaning of freedom through my passion.
 
 > `Check out beta portfolio:` &nbsp; https://portfolio.kushalkumarsaha.com
