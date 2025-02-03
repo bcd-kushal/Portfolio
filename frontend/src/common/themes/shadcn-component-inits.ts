@@ -1,0 +1,1 @@
+export const BLANK_TRAY_STYLES = "p-0 border-none outline-none min-w-fit bg-transparent gap-0 rounded-none"

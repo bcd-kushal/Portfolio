@@ -1,1 +1,0 @@
-export const toClassName = (str:string) => str.replace(/\s+/g,"-").toLowerCase().trim()

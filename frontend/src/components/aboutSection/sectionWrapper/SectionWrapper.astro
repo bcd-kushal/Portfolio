@@ -1,9 +1,0 @@
----
-const { title, id, noTopPadding } = Astro.props as { title: string, id: string, noTopPadding?: boolean }
----
-
-<section id={id} class={`${noTopPadding ? "" : "pt-[190px]"} opacity-0 max-md:px-4 grid grid-cols-[25px_1fr] md:grid-cols-[64px_1fr]`}>
-    <h2 class="text-3xl md:text-4xl col-span-2 mb-10 md:mb-12">{ title }</h2>
-    <span />
-    <slot />
-</section>
