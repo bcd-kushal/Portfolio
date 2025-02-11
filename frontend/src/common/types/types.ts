@@ -120,20 +120,20 @@ export type ProjectDetailsType = {
 
 // ================ TIMELINE =========================
 export type MonthDataType = {
-    name: string;
-    role: string;
+    name: string
+    role: string
     date: {
         from: Date,
         till: Date
     },
-    location: string;
-    logo: string;
-    jobType: "Full-time" | "Part-time" | "Internship" | "Freelance";
-    techUsed: never[];
+    location: string
+    logo: string
+    jobType: "Full-time" | "Part-time" | "Internship" | "Freelance"
+    techUsed: never[]
 }[]
 
 export type TimelineSequenceType = {
-    year: number;
+    year: number
     data: Record<string, MonthDataType>
 }
 

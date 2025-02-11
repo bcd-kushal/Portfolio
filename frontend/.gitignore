@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+app/robots.txt
 
 # debug
 npm-debug.log*
